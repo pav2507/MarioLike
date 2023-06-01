@@ -1,3 +1,5 @@
+//caca ,jzbdcjbzejfkcjn
+
 import { Ennemycac } from "./Ennemy1.js";
 import { Ennemydist } from "./Ennemy2.js";
 import { Ally } from "./Ally.js";
@@ -290,16 +292,54 @@ export class Scene01 extends Phaser.Scene {
         this.collec1 = new Collectible(this, 100, 1312).setDepth(150);
         this.collec2 = new Collectible(this, 210, 1312).setDepth(150);
         this.collec3 = new Collectible(this, 210, 1216).setDepth(150);
+        this.collec4 = new Collectible(this, 210, 1216).setDepth(150);
+        this.collec5 = new Collectible(this, 210, 1216).setDepth(150);
+        this.collec6 = new Collectible(this, 210, 1216).setDepth(150);
+        this.collec7 = new Collectible(this, 210, 1216).setDepth(150);
+        this.collec8 = new Collectible(this, 210, 1216).setDepth(150);
+        this.collec9 = new Collectible(this, 210, 1216).setDepth(150);
+        this.collec10 = new Collectible(this, 210, 1216).setDepth(150);
+        this.collec11 = new Collectible(this, 210, 1216).setDepth(150);
+        this.collec12 = new Collectible(this, 210, 1216).setDepth(150);
+        this.collec13 = new Collectible(this, 210, 1216).setDepth(150);
+        this.collec14 = new Collectible(this, 210, 1216).setDepth(150);
+        this.collec15 = new Collectible(this, 210, 1216).setDepth(150);
 
 
         this.physics.add.collider(this.collec1.visionBox, this.player, this.handleCollisionWithcollec1, null, this);
         this.physics.add.collider(this.collec2.visionBox, this.player, this.handleCollisionWithcollec2, null, this);
         this.physics.add.collider(this.collec3.visionBox, this.player, this.handleCollisionWithcollec3, null, this);
+        this.physics.add.collider(this.collec4.visionBox, this.player, this.handleCollisionWithcollec4, null, this);
+        this.physics.add.collider(this.collec5.visionBox, this.player, this.handleCollisionWithcollec5, null, this);
+        this.physics.add.collider(this.collec6.visionBox, this.player, this.handleCollisionWithcollec6, null, this);
+        this.physics.add.collider(this.collec7.visionBox, this.player, this.handleCollisionWithcollec7, null, this);
+        this.physics.add.collider(this.collec8.visionBox, this.player, this.handleCollisionWithcollec8, null, this);
+        this.physics.add.collider(this.collec9.visionBox, this.player, this.handleCollisionWithcollec9, null, this);
+        this.physics.add.collider(this.collec10.visionBox, this.player, this.handleCollisionWithcollec10, null, this);
+        this.physics.add.collider(this.collec11.visionBox, this.player, this.handleCollisionWithcollec11, null, this);
+        this.physics.add.collider(this.collec12.visionBox, this.player, this.handleCollisionWithcollec12, null, this);
+        this.physics.add.collider(this.collec13.visionBox, this.player, this.handleCollisionWithcollec13, null, this);
+        this.physics.add.collider(this.collec14.visionBox, this.player, this.handleCollisionWithcollec14, null, this);
+        this.physics.add.collider(this.collec15.visionBox, this.player, this.handleCollisionWithcollec15, null, this);
+     
 
 
         this.physics.add.collider(this.collec1, calque_tuile);
         this.physics.add.collider(this.collec2, calque_tuile);
         this.physics.add.collider(this.collec3, calque_tuile);
+        this.physics.add.collider(this.collec4, calque_tuile);
+        this.physics.add.collider(this.collec5, calque_tuile);
+        this.physics.add.collider(this.collec6, calque_tuile);
+        this.physics.add.collider(this.collec7, calque_tuile);
+        this.physics.add.collider(this.collec8, calque_tuile);
+        this.physics.add.collider(this.collec9, calque_tuile);
+        this.physics.add.collider(this.collec10, calque_tuile);
+        this.physics.add.collider(this.collec11, calque_tuile);
+        this.physics.add.collider(this.collec12, calque_tuile);
+        this.physics.add.collider(this.collec13, calque_tuile);
+        this.physics.add.collider(this.collec14, calque_tuile);
+        this.physics.add.collider(this.collec15, calque_tuile);
+        
 
 
         
@@ -452,8 +492,8 @@ export class Scene01 extends Phaser.Scene {
 
     handleCollisionWithAlly9(visionBox, player) {
         // Faire disparaître l'allié
-        this.ally8.setVisible(false);
-        this.ally8.setActive(false);
+        this.ally9.setVisible(false);
+        this.ally9.setActive(false);
 
 
         // Supprimer la hitbox de l'allié
@@ -467,8 +507,8 @@ export class Scene01 extends Phaser.Scene {
 
     handleCollisionWithAlly10(visionBox, player) {
         // Faire disparaître l'allié
-        this.ally8.setVisible(false);
-        this.ally8.setActive(false);
+        this.ally10.setVisible(false);
+        this.ally10.setActive(false);
 
 
         // Supprimer la hitbox de l'allié
@@ -528,6 +568,196 @@ export class Scene01 extends Phaser.Scene {
 
     }
 
+    handleCollisionWithcollec4(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec4.setVisible(false);
+        this.collec4.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
+
+    handleCollisionWithcollec5(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec5.setVisible(false);
+        this.collec5.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
+
+    handleCollisionWithcollec6(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec6.setVisible(false);
+        this.collec6.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
+
+    handleCollisionWithcollec7(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec7.setVisible(false);
+        this.collec7.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
+
+    handleCollisionWithcollec8(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec8.setVisible(false);
+        this.collec8.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
+
+    handleCollisionWithcollec8(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec8.setVisible(false);
+        this.collec8.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
+    handleCollisionWithcollec9(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec9.setVisible(false);
+        this.collec9.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
+    handleCollisionWithcollec10(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec10.setVisible(false);
+        this.collec10.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
+
+    handleCollisionWithcollec11(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec11.setVisible(false);
+        this.collec11.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
+
+    handleCollisionWithcollec12(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec12.setVisible(false);
+        this.collec12.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
+
+    handleCollisionWithcollec13(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec13.setVisible(false);
+        this.collec13.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
+    handleCollisionWithcollec14(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec14.setVisible(false);
+        this.collec14.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
+    handleCollisionWithcollec15(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec15.setVisible(false);
+        this.collec15.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
 
     ////////////////////////////////fonction projectile /////////////////////////////////////////////////////
 
