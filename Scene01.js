@@ -96,14 +96,17 @@ export class Scene01 extends Phaser.Scene {
         const calquepoteau = map.createLayer("calquepoteau", tiles).setDepth(150);
         const calque_decor2 = map.createLayer("calquedecor2", tiles);
         const calque_decor = map.createLayer("calquedecor", tiles).setDepth(150);
-        //const calque_eau = map.createLayer("calqueeau", tiles)
+        //const calque_eau = map.createLayer("calqueeau", tiles).setDepth(1500);
         
         const calque_tuile = map.createLayer("calquetuile", tiles).setDepth(150);
 
 
         console.log(calque_tuile)
         calque_tuile.setCollisionByProperty({ estSolide: true });
-
+        //calque_eau.setCollisionByProperty({ tueur: true });
+        
+        
+        
         this.eau1 = new eau(this, 64,1430).setDepth(110);
         this.eau2 = new eau(this, 400,1430).setDepth(110);
         this.eau3 = new eau(this, 576,1430).setDepth(110);
@@ -123,6 +126,7 @@ export class Scene01 extends Phaser.Scene {
         this.eau5 = new eau(this, 4600,1430).setDepth(110);
         this.eau5 = new eau(this, 4900,1430).setDepth(110);
         this.eau5 = new eau(this, 5200,1430).setDepth(110);
+        
 
 
 
@@ -193,7 +197,9 @@ export class Scene01 extends Phaser.Scene {
         this.previousY = this.player.y;
 
 
-
+        /*this.physics.add.collider(this.player, this.calque_eau, () => {
+            this.player.respawn()
+        });*/
 
 
 

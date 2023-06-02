@@ -35,7 +35,7 @@
   </tile>
   <tile id="29">
    <properties>
-    <property name="estSolide" type="bool" value="true"/>
+    <property name="tueur" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="30">

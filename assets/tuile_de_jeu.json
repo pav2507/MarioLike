@@ -389,7 +389,7 @@
                  "id":29,
                  "properties":[
                         {
-                         "name":"estSolide",
+                         "name":"tueur",
                          "type":"bool",
                          "value":true
                         }]

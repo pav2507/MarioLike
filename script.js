@@ -11,7 +11,7 @@ var config = {
 		default: 'arcade',
 		arcade: {
 			gravity: { y: 500},
-			debug: false 
+			debug: true 
 		}
 	},
 	scene: [ Menu, Scene01, Scene02,credits], 
@@ -20,7 +20,7 @@ var config = {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH, 
     },
-    pixelArt: true
+    pixelArt: true // bug de texture toujours present 
 }
 
 
