@@ -5,6 +5,8 @@ import { Ennemydist } from "./Ennemy2.js";
 import { Ally } from "./Ally.js";
 import { Player } from "./Player.js";
 import { Collectible } from "./Collectible.js";
+import { eau } from "./eau.js";
+
 
 var score;
 var nombre = 0;
@@ -30,6 +32,7 @@ export class Scene01 extends Phaser.Scene {
         this.load.spritesheet('ennemi1', "assets/ennemi1.png", { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('ennemi2', "assets/ennemi2.png", { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('allie1', "assets/allie1.png", { frameWidth: 32, frameHeight: 48 });
+        this.load.spritesheet('eau', "assets/eau.png", { frameWidth: 300, frameHeight: 160 });
 
         //map
         this.load.tilemapTiledJSON('map', "assets/tuile_de_jeu.json");
@@ -93,11 +96,21 @@ export class Scene01 extends Phaser.Scene {
         const calquepoteau = map.createLayer("calquepoteau", tiles).setDepth(150);
         const calque_decor2 = map.createLayer("calquedecor2", tiles);
         const calque_decor = map.createLayer("calquedecor", tiles).setDepth(150);
-        const calque_tuile = map.createLayer("calquetuile", tiles);
+        //const calque_eau = map.createLayer("calqueeau", tiles)
+        
+        const calque_tuile = map.createLayer("calquetuile", tiles).setDepth(150);
 
 
         console.log(calque_tuile)
         calque_tuile.setCollisionByProperty({ estSolide: true });
+
+        this.eau1 = new eau(this, 64,1430).setDepth(110);
+        this.eau1 = new eau(this, 400,1430).setDepth(110);
+        this.eau1 = new eau(this, 576,1430).setDepth(110);
+        this.eau1 = new eau(this, 732,1430).setDepth(110);
+
+
+
 
         //#endregion
 
@@ -366,6 +379,12 @@ export class Scene01 extends Phaser.Scene {
         this.add.image(10, 38, "uiallysave").setOrigin(0, 0).setScrollFactor(0).setDepth(250);
         this.add.image(10, 78, "uishuriken").setOrigin(0, 0).setScrollFactor(0).setDepth(250);
     }
+
+
+
+
+
+
 
     ////////////////////////////////focntion collision ally /////////////////////////////////////////////////////
 
