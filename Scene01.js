@@ -105,9 +105,25 @@ export class Scene01 extends Phaser.Scene {
         calque_tuile.setCollisionByProperty({ estSolide: true });
 
         this.eau1 = new eau(this, 64,1430).setDepth(110);
-        this.eau1 = new eau(this, 400,1430).setDepth(110);
-        this.eau1 = new eau(this, 576,1430).setDepth(110);
-        this.eau1 = new eau(this, 732,1430).setDepth(110);
+        this.eau2 = new eau(this, 400,1430).setDepth(110);
+        this.eau3 = new eau(this, 576,1430).setDepth(110);
+        this.eau4 = new eau(this, 732,1430).setDepth(110);
+        this.eau5 = new eau(this, 900,1430).setDepth(110);
+        this.eau5 = new eau(this, 1200,1430).setDepth(110);
+        this.eau5 = new eau(this, 1550,1430).setDepth(110);
+        this.eau5 = new eau(this, 1800,1430).setDepth(110);
+        this.eau5 = new eau(this, 2200,1430).setDepth(110);
+        this.eau5 = new eau(this, 2500,1430).setDepth(110);
+        this.eau5 = new eau(this, 2800,1430).setDepth(110);
+        this.eau5 = new eau(this, 3100,1430).setDepth(110);
+        this.eau5 = new eau(this, 3400,1430).setDepth(110);
+        this.eau5 = new eau(this, 3700,1430).setDepth(110);
+        this.eau5 = new eau(this, 4000,1430).setDepth(110);
+        this.eau5 = new eau(this, 4300,1430).setDepth(110);
+        this.eau5 = new eau(this, 4600,1430).setDepth(110);
+        this.eau5 = new eau(this, 4900,1430).setDepth(110);
+        this.eau5 = new eau(this, 5200,1430).setDepth(110);
+
 
 
 
