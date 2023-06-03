@@ -96,14 +96,22 @@ export class Scene01 extends Phaser.Scene {
         const calquepoteau = map.createLayer("calquepoteau", tiles).setDepth(150);
         const calque_decor2 = map.createLayer("calquedecor2", tiles);
         const calque_decor = map.createLayer("calquedecor", tiles).setDepth(150);
-        //const calque_eau = map.createLayer("calqueeau", tiles).setDepth(1500);
+        
         
         const calque_tuile = map.createLayer("calquetuile", tiles).setDepth(150);
 
 
-        console.log(calque_tuile)
+       
         calque_tuile.setCollisionByProperty({ estSolide: true });
-        //calque_eau.setCollisionByProperty({ tueur: true });
+        
+        
+        
+       
+     
+
+
+        
+
         
         
         
@@ -112,20 +120,20 @@ export class Scene01 extends Phaser.Scene {
         this.eau3 = new eau(this, 576,1430).setDepth(110);
         this.eau4 = new eau(this, 732,1430).setDepth(110);
         this.eau5 = new eau(this, 900,1430).setDepth(110);
-        this.eau5 = new eau(this, 1200,1430).setDepth(110);
-        this.eau5 = new eau(this, 1550,1430).setDepth(110);
-        this.eau5 = new eau(this, 1800,1430).setDepth(110);
-        this.eau5 = new eau(this, 2200,1430).setDepth(110);
-        this.eau5 = new eau(this, 2500,1430).setDepth(110);
-        this.eau5 = new eau(this, 2800,1430).setDepth(110);
-        this.eau5 = new eau(this, 3100,1430).setDepth(110);
-        this.eau5 = new eau(this, 3400,1430).setDepth(110);
-        this.eau5 = new eau(this, 3700,1430).setDepth(110);
-        this.eau5 = new eau(this, 4000,1430).setDepth(110);
-        this.eau5 = new eau(this, 4300,1430).setDepth(110);
-        this.eau5 = new eau(this, 4600,1430).setDepth(110);
-        this.eau5 = new eau(this, 4900,1430).setDepth(110);
-        this.eau5 = new eau(this, 5200,1430).setDepth(110);
+        this.eau6 = new eau(this, 1200,1430).setDepth(110);
+        this.eau7 = new eau(this, 1550,1430).setDepth(110);
+        this.eau8 = new eau(this, 1800,1430).setDepth(110);
+        this.eau9 = new eau(this, 2200,1430).setDepth(110);
+        this.eau10 = new eau(this, 2500,1430).setDepth(110);
+        this.eau11 = new eau(this, 2800,1430).setDepth(110);
+        this.eau12 = new eau(this, 3100,1430).setDepth(110);
+        this.eau13 = new eau(this, 3270,1430).setDepth(110);
+        this.eau14 = new eau(this, 3720,1430).setDepth(110);
+        this.eau15 = new eau(this, 4000,1430).setDepth(110);
+        this.eau16 = new eau(this, 4300,1430).setDepth(110);
+        this.eau17 = new eau(this, 4600,1430).setDepth(110);
+        this.eau18 = new eau(this, 4900,1430).setDepth(110);
+        this.eau19 = new eau(this, 5200,1430).setDepth(110);
         
 
 
@@ -142,6 +150,8 @@ export class Scene01 extends Phaser.Scene {
             // ptet on va trouver comment faire des dégats de chute ici
         });
         this.physics.add.collider(this.player, this.ennemydistGroup, this.handleCollision, null, this);
+        
+        
 
 
         // espace = lancé de projectile 
@@ -197,10 +207,7 @@ export class Scene01 extends Phaser.Scene {
         this.previousY = this.player.y;
 
 
-        /*this.physics.add.collider(this.player, this.calque_eau, () => {
-            this.player.respawn()
-        });*/
-
+        
 
 
 
@@ -409,6 +416,7 @@ export class Scene01 extends Phaser.Scene {
 
 
     ////////////////////////////////focntion collision ally /////////////////////////////////////////////////////
+
 
 
     handleCollisionWithAlly1(visionBox, player) {
