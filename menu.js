@@ -9,6 +9,7 @@ export class Menu extends Phaser.Scene{
         this.load.image('background02', 'assets/backgroundarbre2.png');
         this.load.image('background03', 'assets/backgroundmontain1.png');
         this.load.image('background04', 'assets/backgroundmontain2.png');
+        this.load.image('parchemin', 'assets/parchemin.png');
         this.load.image('background05', 'assets/background.png');
         this.load.image('brume', 'assets/effetbrume.png');
         this.load.spritesheet('logo', 'assets/logo.png',{ frameWidth: 150, frameHeight: 150 });
@@ -27,13 +28,14 @@ export class Menu extends Phaser.Scene{
         this.add.image(0, -130, 'background03');
         this.add.image(0, -50, 'background02');
         this.add.image(0, -50, 'background01');
+        this.add.image(300, 295, 'parchemin').setDepth(7);
         this.add.image(0, -50, 'brume').setDepth(6);
 
 
 
-        var boutonOption = this.add.sprite(150, 300, 'option').setInteractive();
-        var boutonPlay = this.add.sprite(300, 300, 'play').setInteractive();
-        var boutonQuit = this.add.sprite(450, 300, 'quit').setInteractive();
+        var boutonOption = this.add.sprite(175, 290, 'option').setInteractive().setDepth(7);
+        var boutonPlay = this.add.sprite(287.5, 290, 'play').setInteractive().setDepth(7);
+        var boutonQuit = this.add.sprite(400, 290, 'quit').setInteractive().setDepth(7);
         var boutonlogo = this.add.sprite(300, 150, 'logo').setInteractive();
         
 

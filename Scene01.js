@@ -93,7 +93,7 @@ export class Scene01 extends Phaser.Scene {
         const map = this.add.tilemap("map");// ajout map 
         const tiles = map.addTilesetImage("tilesettest", "tileset");// ajout collision
 
-        const calquepoteau = map.createLayer("calquepoteau", tiles).setDepth(150);
+        const calquepoteau = map.createLayer("calquepoteau", tiles).setDepth(160);
         const calque_decor2 = map.createLayer("calquedecor2", tiles);
         const calque_decor = map.createLayer("calquedecor", tiles).setDepth(150);
         
@@ -133,7 +133,7 @@ export class Scene01 extends Phaser.Scene {
         this.eau16 = new eau(this, 4300,1430).setDepth(110);
         this.eau17 = new eau(this, 4600,1430).setDepth(110);
         this.eau18 = new eau(this, 4900,1430).setDepth(110);
-        this.eau19 = new eau(this, 5200,1430).setDepth(110);
+        this.eau19 = new eau(this, 4920,1430).setDepth(110);
         
 
 
