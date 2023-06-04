@@ -364,10 +364,10 @@ export class Scene01 extends Phaser.Scene {
         this.collec1 = new Collectible(this, 100, 1312).setDepth(150);
         this.collec2 = new Collectible(this, 210, 1312).setDepth(150);
         this.collec3 = new Collectible(this, 210, 1216).setDepth(150);
-        this.collec4 = new Collectible(this, 210, 1216).setDepth(150);
-        this.collec5 = new Collectible(this, 210, 1216).setDepth(150);
-        this.collec6 = new Collectible(this, 210, 1216).setDepth(150);
-        this.collec7 = new Collectible(this, 210, 1216).setDepth(150);
+        this.collec4 = new Collectible(this, 15.5*32, 38*32).setDepth(150);
+        this.collec5 = new Collectible(this, 28.5*32, 37*32).setDepth(150);
+        this.collec6 = new Collectible(this, 59.5*32, 37*32).setDepth(150);
+        this.collec7 = new Collectible(this, 62.5*32, 46*32).setDepth(150);
         this.collec8 = new Collectible(this, 210, 1216).setDepth(150);
         this.collec9 = new Collectible(this, 210, 1216).setDepth(150);
         this.collec10 = new Collectible(this, 210, 1216).setDepth(150);
