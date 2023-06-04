@@ -228,6 +228,17 @@ export class Scene01 extends Phaser.Scene {
         this.ennemi12 = new Ennemydist(this, 4335, 1216);
         this.ennemi13= new Ennemycac(this, 5184, 1280, 1248, 700);
         this.ennemi14 = new Ennemydist(this, 4800, 1248);
+        this.ennemi15= new Ennemycac(this, 170*32, 40*32, 1248, 700);
+        this.ennemi16= new Ennemycac(this, 182*32, 40*32, 1248, 700);
+        this.ennemi17 = new Ennemydist(this, 202*32, 1248);
+        this.ennemi18= new Ennemycac(this, 194*32, 34*32, 1248, 700);
+        this.ennemi19 = new Ennemydist(this, 179*32, 34*32);
+        this.ennemi20 = new Ennemycac(this, 183*32, 28*32, 1248, 700);
+        this.ennemi21 = new Ennemydist(this, 200*32, 28*32);
+        this.ennemi22 = new Ennemydist(this, 196*32, 22 *32);
+        this.ennemi23 = new Ennemycac(this, 183*32, 28*32, 1248, 700);
+
+        
 
 
 
@@ -245,6 +256,15 @@ export class Scene01 extends Phaser.Scene {
         this.groupeEnnemis.add(this.ennemi12);
         this.groupeEnnemis.add(this.ennemi13);
         this.groupeEnnemis.add(this.ennemi14);
+        this.groupeEnnemis.add(this.ennemi15);
+        this.groupeEnnemis.add(this.ennemi16);
+        this.groupeEnnemis.add(this.ennemi17);
+        this.groupeEnnemis.add(this.ennemi18);
+        this.groupeEnnemis.add(this.ennemi19);
+        this.groupeEnnemis.add(this.ennemi20);
+        this.groupeEnnemis.add(this.ennemi21);
+        this.groupeEnnemis.add(this.ennemi22);
+        this.groupeEnnemis.add(this.ennemi23);
 
 
         this.ennemydistGroup = this.physics.add.group({ colliderWorldBounds: false });
@@ -261,6 +281,12 @@ export class Scene01 extends Phaser.Scene {
         this.ennemycacGroup.add(this.ennemi7);
         this.ennemycacGroup.add(this.ennemi9);
         this.ennemycacGroup.add(this.ennemi13);
+        this.ennemycacGroup.add(this.ennemi15);
+        this.ennemycacGroup.add(this.ennemi16);
+        this.ennemycacGroup.add(this.ennemi18);
+        this.ennemycacGroup.add(this.ennemi20);
+        this.ennemycacGroup.add(this.ennemi23);
+
 
         this.ennemydistGroup.add(this.ennemi3);
         this.ennemydistGroup.add(this.ennemi6);
@@ -269,6 +295,10 @@ export class Scene01 extends Phaser.Scene {
         this.ennemydistGroup.add(this.ennemi11);
         this.ennemydistGroup.add(this.ennemi12);
         this.ennemydistGroup.add(this.ennemi14);
+        this.ennemydistGroup.add(this.ennemi17);
+        this.ennemydistGroup.add(this.ennemi19);
+        this.ennemydistGroup.add(this.ennemi21);
+        this.ennemydistGroup.add(this.ennemi22);
 
         this.physics.add.collider(this.player, this.ennemycacGroup, () => {
             this.player.takeDamage(1);
