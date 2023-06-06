@@ -40,9 +40,8 @@ export class Ennemydist extends Phaser.Physics.Arcade.Sprite {
     
         // Gestion de la collision entre le shuriken et le joueur
         this.scene.physics.add.collider(shuriken, this.scene.player, () => {
-            this.scene.player.takeDamage(1);
-            shuriken.destroy(); // Supprimer le shuriken
-            
+            this.scene.player.takeDamage(1); // ça bug ici
+            shuriken.destroy(); // Supprimer le shuriken   
         });
     }
 

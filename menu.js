@@ -12,6 +12,7 @@ export class Menu extends Phaser.Scene{
         this.load.image('parchemin', 'assets/parchemin.png');
         this.load.image('background05', 'assets/background.png');
         this.load.image('brume', 'assets/effetbrume.png');
+        this.load.image('logo1', 'assets/logo1.png');
         this.load.spritesheet('logo', 'assets/logo.png',{ frameWidth: 150, frameHeight: 150 });
         this.load.spritesheet('play', 'assets/boutonplay.png',{ frameWidth: 100, frameHeight: 50 });
         this.load.spritesheet('option', 'assets/option.png',{ frameWidth: 100, frameHeight: 50 }); 
@@ -28,30 +29,22 @@ export class Menu extends Phaser.Scene{
         this.add.image(0, -130, 'background03');
         this.add.image(0, -50, 'background02');
         this.add.image(0, -50, 'background01');
-        this.add.image(300, 295, 'parchemin').setDepth(7);
+        //this.add.image(300, 295, 'parchemin').setDepth(7);
         this.add.image(0, -50, 'brume').setDepth(6);
 
+        this.add.image(300, 150, 'logo1').setDepth(6);
 
 
-        var boutonOption = this.add.sprite(175, 290, 'option').setInteractive().setDepth(7);
-        var boutonPlay = this.add.sprite(287.5, 290, 'play').setInteractive().setDepth(7);
-        var boutonQuit = this.add.sprite(400, 290, 'quit').setInteractive().setDepth(7);
-        var boutonlogo = this.add.sprite(300, 150, 'logo').setInteractive();
+
+        var boutonOption = this.add.sprite(185, 286, 'option').setInteractive().setDepth(7);
+        var boutonPlay = this.add.sprite(297, 286, 'play').setInteractive().setDepth(7);
+        var boutonQuit = this.add.sprite(410, 286, 'quit').setInteractive().setDepth(7);
+       
         
 
         boutonPlay.on('pointerup',this.sceneScene01,this);
         boutonOption.on('pointerup',this.scenecredits,this);
-        boutonQuit.on('pointerup', () => {
-            var confirmation = confirm("Êtes-vous sûr de vouloir quitter le jeu ?");
-        
-            if (confirmation) {
-                // Affichage d'un message ou d'une animation de sortie si nécessaire
-                // ...
-        
-                // Demande à l'utilisateur de fermer manuellement l'onglet ou la fenêtre
-                window.close();
-            }
-        });
+        boutonQuit.on('pointerup',this.scenetuto,this);
 
 
         // Ajoute l'animation au bouton play
@@ -90,16 +83,7 @@ export class Menu extends Phaser.Scene{
         // Joue l'animation du bouton play
         boutonOption.anims.play('option_animation');
 
-        this.anims.create({
-            key: 'logoanim',
-            frames: this.anims.generateFrameNumbers('logo', { start: 0, end: 2}),
-            frameRate: 10,
-            repeat: -1
-        }
-        );
-        // Joue l'animation du bouton play
-        boutonlogo.anims.play('logoanim');
-
+        
     
     
  
@@ -120,6 +104,10 @@ export class Menu extends Phaser.Scene{
 
     scenecredits(){
         this.scene.start("credits")
+    }
+
+    scenetuto(){
+        this.scene.start("tuto")
     }
 
 };

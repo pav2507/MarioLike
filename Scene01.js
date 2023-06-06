@@ -1,4 +1,4 @@
-//caca ,jzbdcjbzejfkcjn
+
 
 import { Ennemycac } from "./Ennemy1.js";
 import { Ennemydist } from "./Ennemy2.js";
@@ -6,6 +6,7 @@ import { Ally } from "./Ally.js";
 import { Player } from "./Player.js";
 import { Collectible } from "./Collectible.js";
 import { eau } from "./eau.js";
+import { prof } from "./prof.js";
 
 
 var score;
@@ -33,6 +34,7 @@ export class Scene01 extends Phaser.Scene {
         this.load.spritesheet('ennemi2', "assets/ennemi2.png", { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('allie1', "assets/allie1.png", { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('eau', "assets/eau.png", { frameWidth: 300, frameHeight: 160 });
+        this.load.spritesheet('prof', "assets/prof.png", { frameWidth: 32, frameHeight: 48 });
 
         //map
         this.load.tilemapTiledJSON('map', "assets/tuile_de_jeu.json");
@@ -336,6 +338,12 @@ export class Scene01 extends Phaser.Scene {
         this.ally8 = new Ally(this, 4000, 1280);
         this.ally9 = new Ally(this, 4480, 1280);
         this.ally10 = new Ally(this, 5216, 1088);
+        this.ally11 = new Ally(this, 198*32, 39*32);
+        this.ally12 = new Ally(this, 193*32, 46*32);
+        this.ally13 = new Ally(this, 171*32, 28*32);
+        this.ally14 = new Ally(this, 184*32, 22*32);
+
+        this.prof = new prof(this, 200*32, 14*32);
 
         this.physics.add.collider(this.ally1.visionBox, this.player, this.handleCollisionWithAlly1, null, this);
         this.physics.add.collider(this.ally2.visionBox, this.player, this.handleCollisionWithAlly2, null, this);
@@ -347,6 +355,12 @@ export class Scene01 extends Phaser.Scene {
         this.physics.add.collider(this.ally8.visionBox, this.player, this.handleCollisionWithAlly8, null, this);
         this.physics.add.collider(this.ally9.visionBox, this.player, this.handleCollisionWithAlly9, null, this);
         this.physics.add.collider(this.ally10.visionBox, this.player, this.handleCollisionWithAlly10, null, this);
+        this.physics.add.collider(this.ally11.visionBox, this.player, this.handleCollisionWithAlly11, null, this);
+        this.physics.add.collider(this.ally12.visionBox, this.player, this.handleCollisionWithAlly12, null, this);
+        this.physics.add.collider(this.ally13.visionBox, this.player, this.handleCollisionWithAlly13, null, this);
+        this.physics.add.collider(this.ally14.visionBox, this.player, this.handleCollisionWithAlly14, null, this);
+
+        this.physics.add.collider(this.prof.visionBox, this.player, this.handleCollisionWithprof, null, this);
 
         this.physics.add.collider(this.ally1, calque_tuile);
         this.physics.add.collider(this.ally2, calque_tuile);
@@ -358,6 +372,11 @@ export class Scene01 extends Phaser.Scene {
         this.physics.add.collider(this.ally8, calque_tuile);
         this.physics.add.collider(this.ally9, calque_tuile);
         this.physics.add.collider(this.ally10, calque_tuile);
+        this.physics.add.collider(this.ally11, calque_tuile);
+        this.physics.add.collider(this.ally12, calque_tuile);
+        this.physics.add.collider(this.ally13, calque_tuile);
+        this.physics.add.collider(this.ally14, calque_tuile);
+        this.physics.add.collider(this.prof, calque_tuile);
 
         //////////////////////////////// collectible  /////////////////////////////////////////////////////
 
@@ -368,14 +387,17 @@ export class Scene01 extends Phaser.Scene {
         this.collec5 = new Collectible(this, 28.5*32, 37*32).setDepth(150);
         this.collec6 = new Collectible(this, 59.5*32, 37*32).setDepth(150);
         this.collec7 = new Collectible(this, 62.5*32, 46*32).setDepth(150);
-        this.collec8 = new Collectible(this, 210, 1216).setDepth(150);
-        this.collec9 = new Collectible(this, 210, 1216).setDepth(150);
-        this.collec10 = new Collectible(this, 210, 1216).setDepth(150);
-        this.collec11 = new Collectible(this, 210, 1216).setDepth(150);
-        this.collec12 = new Collectible(this, 210, 1216).setDepth(150);
-        this.collec13 = new Collectible(this, 210, 1216).setDepth(150);
-        this.collec14 = new Collectible(this, 210, 1216).setDepth(150);
-        this.collec15 = new Collectible(this, 210, 1216).setDepth(150);
+        this.collec8 = new Collectible(this, 73*32, 36*32).setDepth(150);
+        this.collec9 = new Collectible(this, 93*32, 36*32).setDepth(150);
+        this.collec10 = new Collectible(this, 109*32, 46*32).setDepth(150);
+        this.collec11 = new Collectible(this, 137*32, 34*32).setDepth(150);
+        this.collec12 = new Collectible(this, 158*32, 35*32).setDepth(150);
+        this.collec13 = new Collectible(this, 200*32, 46*32).setDepth(150);
+        this.collec14 = new Collectible(this, 171*32, 31*32).setDepth(150);
+        this.collec15 = new Collectible(this, 168*32, 25*32).setDepth(150);
+        this.collec16 = new Collectible(this, 168*32, 25*32).setDepth(150);
+        this.collec17 = new Collectible(this, 168*32, 25*32).setDepth(150);
+        this.collec18 = new Collectible(this, 168*32, 25*32).setDepth(150);
 
 
         this.physics.add.collider(this.collec1.visionBox, this.player, this.handleCollisionWithcollec1, null, this);
@@ -393,6 +415,10 @@ export class Scene01 extends Phaser.Scene {
         this.physics.add.collider(this.collec13.visionBox, this.player, this.handleCollisionWithcollec13, null, this);
         this.physics.add.collider(this.collec14.visionBox, this.player, this.handleCollisionWithcollec14, null, this);
         this.physics.add.collider(this.collec15.visionBox, this.player, this.handleCollisionWithcollec15, null, this);
+        this.physics.add.collider(this.collec16.visionBox, this.player, this.handleCollisionWithcollec16, null, this);
+        this.physics.add.collider(this.collec17.visionBox, this.player, this.handleCollisionWithcollec17, null, this);
+        this.physics.add.collider(this.collec18.visionBox, this.player, this.handleCollisionWithcollec18, null, this);
+        
      
 
 
@@ -411,6 +437,9 @@ export class Scene01 extends Phaser.Scene {
         this.physics.add.collider(this.collec13, calque_tuile);
         this.physics.add.collider(this.collec14, calque_tuile);
         this.physics.add.collider(this.collec15, calque_tuile);
+        this.physics.add.collider(this.collec16, calque_tuile);
+        this.physics.add.collider(this.collec17, calque_tuile);
+        this.physics.add.collider(this.collec18, calque_tuile);
         
 
 
@@ -588,6 +617,81 @@ export class Scene01 extends Phaser.Scene {
         // Faire disparaître l'allié
         this.ally10.setVisible(false);
         this.ally10.setActive(false);
+
+
+        // Supprimer la hitbox de l'allié
+        visionBox.destroy();
+
+        nombre = nombre + 1;
+        score.setText(+ nombre);
+
+
+    }
+
+    handleCollisionWithAlly11(visionBox, player) {
+        // Faire disparaître l'allié
+        this.ally11.setVisible(false);
+        this.ally11.setActive(false);
+
+
+        // Supprimer la hitbox de l'allié
+        visionBox.destroy();
+
+        nombre = nombre + 1;
+        score.setText(+ nombre);
+
+
+    }
+
+    handleCollisionWithAlly12(visionBox, player) {
+        // Faire disparaître l'allié
+        this.ally12.setVisible(false);
+        this.ally12.setActive(false);
+
+
+        // Supprimer la hitbox de l'allié
+        visionBox.destroy();
+
+        nombre = nombre + 1;
+        score.setText(+ nombre);
+
+
+    }
+
+    handleCollisionWithAlly13(visionBox, player) {
+        // Faire disparaître l'allié
+        this.ally13.setVisible(false);
+        this.ally13.setActive(false);
+
+
+        // Supprimer la hitbox de l'allié
+        visionBox.destroy();
+
+        nombre = nombre + 1;
+        score.setText(+ nombre);
+
+
+    }
+
+    handleCollisionWithAlly14(visionBox, player) {
+        // Faire disparaître l'allié
+        this.ally14.setVisible(false);
+        this.ally14.setActive(false);
+
+
+        // Supprimer la hitbox de l'allié
+        visionBox.destroy();
+
+        nombre = nombre + 1;
+        score.setText(+ nombre);
+
+
+    }
+
+    handleCollisionWithprof(visionBox, player) {
+        // Faire disparaître l'allié
+        this.prof.setVisible(false);
+        this.prof.setActive(false);
 
 
         // Supprimer la hitbox de l'allié
@@ -827,6 +931,48 @@ export class Scene01 extends Phaser.Scene {
         // Faire disparaître le shuriken
         this.collec15.setVisible(false);
         this.collec15.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
+    handleCollisionWithcollec16(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec16.setVisible(false);
+        this.collec16.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
+    handleCollisionWithcollec17(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec17.setVisible(false);
+        this.collec17.setActive(false);
+
+
+        // Supprimer la hitbox du shuriken
+        visionBox.destroy();
+
+        nombrecollec = nombrecollec + 1;
+        scorecollec.setText(+ nombrecollec);
+
+
+    }
+    handleCollisionWithcollec18(visionBox, player) {
+        // Faire disparaître le shuriken
+        this.collec18.setVisible(false);
+        this.collec18.setActive(false);
 
 
         // Supprimer la hitbox du shuriken

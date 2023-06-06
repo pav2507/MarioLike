@@ -1,6 +1,6 @@
-export class credits extends Phaser.Scene{
+export class tuto extends Phaser.Scene{
     constructor(){
-        super("credits");
+        super("tuto");
     }
 
 
@@ -10,8 +10,9 @@ export class credits extends Phaser.Scene{
     this.load.image('background3', 'assets/backgroundmontain1.png');
     this.load.image('background4', 'assets/backgroundmontain2.png');
     this.load.image('background5', 'assets/background.png');
-    this.load.image('brume', 'assets/effetbrume.png');
+    this.load.image('tuto', 'assets/tuto.png');
     this.load.image('back', 'assets/back.png');
+
 
     }
 
@@ -26,26 +27,14 @@ export class credits extends Phaser.Scene{
         this.add.image(0, -50, 'background2');
         this.add.image(0, -50, 'background1');
         this.add.image(0, -50, 'brume').setDepth(6);
+        this.add.image(300, 200, 'tuto').setDepth(10);
+
 
         var boutonback = this.add.sprite(550, 330, 'back').setInteractive().setDepth(10);
 
         boutonback.on('pointerup',this.scenemenu,this);
 
-
-        // Ajouter un texte
-        var texteCredits = this.add.text(300, 40, 'Crédits', {
-            fontFamily: 'Arial',
-            fontSize: '32px',
-            color: '#ffffff'
-        });
-        texteCredits.setOrigin(0.5);
-
-        var texteCredits = this.add.text(310, 340, 'Merci à Alan, JD et Marin pour leur aide ', {
-            fontFamily: 'Arial',
-            fontSize: '16',
-            color: '#ffffff'
-        });
-        texteCredits.setOrigin(0.5);
+        
         
         
 
@@ -54,6 +43,5 @@ export class credits extends Phaser.Scene{
     scenemenu(){
         this.scene.start("Menu")
     }
-
 
 }
