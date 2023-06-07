@@ -12,6 +12,7 @@ export class final extends Phaser.Scene{
         this.load.image('background05', 'assets/background.png');
         this.load.image('brume', 'assets/effetbrume.png');
         this.load.image('back', 'assets/back.png');
+        this.load.audio('musique', 'assets/musique.mp3');
 
 
     }
@@ -19,7 +20,8 @@ export class final extends Phaser.Scene{
     create(){
         //ici le code de la fonction create
 
-
+        this.musique = this.sound.add('musique', { loop: true });
+        this.musique.play();
 
         this.add.image(0, -0, 'background05');
         this.add.image(0, -50, 'background04');

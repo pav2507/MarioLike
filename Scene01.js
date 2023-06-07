@@ -15,6 +15,8 @@ var nombre = 0;
 var scorecollec;
 var nombrecollec = 0;
 
+let tempsEcoule = 0;
+
 export class Scene01 extends Phaser.Scene {
 
     constructor() {
@@ -91,6 +93,15 @@ export class Scene01 extends Phaser.Scene {
         this.add.image(1750, 750, 'brume').setScrollFactor(0.85).setDepth(-6);
         this.add.image(1750, 750, 'brume').setScrollFactor(0.85).setDepth(-9);
         this.add.image(1750, 850, 'brume').setScrollFactor(0.85).setDepth(  500);
+
+        this.tempsTexte = this.add.text(300, 10, 'Temps : 0', { font: '16px Arial', fill: '#ffffff' });
+
+        this.tempsEvent = this.time.addEvent({
+          delay: 1000, // temps en millisecondes entre chaque déclenchement de l'événement
+          callback: this.mettreAJourChronometre,
+          callbackScope: this,
+          loop: true
+        });
       
         
         
@@ -1031,6 +1042,11 @@ export class Scene01 extends Phaser.Scene {
 
     destroy() {
         this.particles.destroy();
+    }
+
+    mettreAJourChronometre() {
+        tempsEcoule += 1;
+        this.tempsTexte.setText('Temps : ' + tempsEcoule);
     }
 
 

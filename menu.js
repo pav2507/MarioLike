@@ -17,10 +17,14 @@ export class Menu extends Phaser.Scene{
         this.load.spritesheet('play', 'assets/boutonplay.png',{ frameWidth: 100, frameHeight: 50 });
         this.load.spritesheet('option', 'assets/option.png',{ frameWidth: 100, frameHeight: 50 }); 
         this.load.spritesheet('quit', 'assets/quit.png',{ frameWidth: 100, frameHeight: 50 }); 
+        this.load.audio('musique', 'assets/musique.mp3');
     }
 
     create(){
         //ici le code de la fonction create
+
+        this.musique = this.sound.add('musique', { loop: true });
+        this.musique.play();
 
 
 
