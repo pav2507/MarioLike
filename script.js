@@ -3,6 +3,7 @@ import { Scene02 as Scene02 } from "./Scene02.js";
 import { Menu as Menu } from "./menu.js";
 import {credits as credits} from "./credits.js"
 import {tuto as tuto} from "./tuto.js"
+import {final as final} from "./final.js"
 
 var config = {
 	type: Phaser.WEBGL,
@@ -15,7 +16,7 @@ var config = {
 			debug: true 
 		}
 	},
-	scene: [ Menu,tuto, Scene01, Scene02,credits,], 
+	scene: [ Menu,tuto, Scene01, Scene02,credits,final ], 
 	scale: {
         parent: 'game_viewport',
         mode: Phaser.Scale.FIT,

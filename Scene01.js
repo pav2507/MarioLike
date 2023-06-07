@@ -11,9 +11,9 @@ import { boss} from "./boss.js"
 
 
 var score;
-var nombre = 0;
+var nombre = 14;
 var scorecollec;
-var nombrecollec = 0;
+var nombrecollec = 14;
 
 export class Scene01 extends Phaser.Scene {
 
@@ -1038,7 +1038,7 @@ export class Scene01 extends Phaser.Scene {
 
         if (nombre == 15){
 
-            this.scene.start("Menu")
+            this.scene.start("final")
 
         }
 
