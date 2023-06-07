@@ -7,6 +7,7 @@ import { Player } from "./Player.js";
 import { Collectible } from "./Collectible.js";
 import { eau } from "./eau.js";
 import { prof } from "./prof.js";
+import { boss} from "./boss.js"
 
 
 var score;
@@ -35,6 +36,7 @@ export class Scene01 extends Phaser.Scene {
         this.load.spritesheet('allie1', "assets/allie1.png", { frameWidth: 32, frameHeight: 48 });
         this.load.spritesheet('eau', "assets/eau.png", { frameWidth: 300, frameHeight: 160 });
         this.load.spritesheet('prof', "assets/prof.png", { frameWidth: 32, frameHeight: 48 });
+        this.load.spritesheet('boss', "assets/boss.png", { frameWidth: 32, frameHeight: 48 });
 
         //map
         this.load.tilemapTiledJSON('map', "assets/tuile_de_jeu.json");
@@ -62,6 +64,9 @@ export class Scene01 extends Phaser.Scene {
         this.load.image('option', 'asset/option.png'); 
         this.load.image('quit', 'asset/quitter.png'); 
 
+        //musique 
+        this.load.audio('musique', 'assets/musique.mp3');
+
 
     }
 
@@ -74,6 +79,9 @@ export class Scene01 extends Phaser.Scene {
     create() {
 
         //#region //////////////////////////////// map /////////////////////////////////////////////////////
+
+        this.musique = this.sound.add('musique', { loop: true });
+        this.musique.play();
 
         this.add.image(1750, 800, 'background').setScrollFactor(0.6).setDepth(-11);
         this.add.image(1750, 550, 'background2').setScrollFactor(0.6).setDepth(-10);
@@ -238,7 +246,13 @@ export class Scene01 extends Phaser.Scene {
         this.ennemi20 = new Ennemycac(this, 183*32, 28*32, 1248, 700);
         this.ennemi21 = new Ennemydist(this, 200*32, 28*32);
         this.ennemi22 = new Ennemydist(this, 196*32, 22 *32);
-        this.ennemi23 = new Ennemycac(this, 183*32, 28*32, 1248, 700);
+        this.ennemi23 = new Ennemycac(this, 170*32, 46*32, 1248, 700);
+
+        this.boss1 = new boss(this, 194*32, 16*32, 1248, 700);
+        this.boss2 = new boss(this, 194*32, 16*32, 1248, 700);
+        this.boss3 = new boss(this, 194*32, 16*32, 1248, 700);
+        this.boss4 = new boss(this, 194*32, 16*32, 1248, 700);
+        this.boss5 = new boss(this, 194*32, 16*32, 1248, 700);
 
         
 
@@ -267,6 +281,12 @@ export class Scene01 extends Phaser.Scene {
         this.groupeEnnemis.add(this.ennemi21);
         this.groupeEnnemis.add(this.ennemi22);
         this.groupeEnnemis.add(this.ennemi23);
+        
+        this.groupeEnnemis.add(this.boss1);
+        this.groupeEnnemis.add(this.boss2);
+        this.groupeEnnemis.add(this.boss3);
+        this.groupeEnnemis.add(this.boss4);
+        this.groupeEnnemis.add(this.boss5);
 
 
         this.ennemydistGroup = this.physics.add.group({ colliderWorldBounds: false });
@@ -301,6 +321,11 @@ export class Scene01 extends Phaser.Scene {
         this.ennemydistGroup.add(this.ennemi19);
         this.ennemydistGroup.add(this.ennemi21);
         this.ennemydistGroup.add(this.ennemi22);
+        this.ennemydistGroup.add(this.boss1);
+        this.ennemydistGroup.add(this.boss2);
+        this.ennemydistGroup.add(this.boss3);
+        this.ennemydistGroup.add(this.boss4);
+        this.ennemydistGroup.add(this.boss5);
 
         this.physics.add.collider(this.player, this.ennemycacGroup, () => {
             this.player.takeDamage(1);
@@ -1010,6 +1035,12 @@ export class Scene01 extends Phaser.Scene {
 
 
     update() {
+
+        if (nombre == 15){
+
+            this.scene.start("Menu")
+
+        }
 
         if (this.player.body.blocked.down) this.hasDoubleJumped = false;
 
