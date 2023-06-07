@@ -11,9 +11,9 @@ import { boss} from "./boss.js"
 
 
 var score;
-var nombre = 14;
+var nombre = 0;
 var scorecollec;
-var nombrecollec = 14;
+var nombrecollec = 0;
 
 export class Scene01 extends Phaser.Scene {
 
